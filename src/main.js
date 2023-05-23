@@ -1,4 +1,5 @@
 import { header } from "./componentes/header";
+import { User } from "./componentes/user";
 import panel from "./vistas/panel";
 
 //inyecto el componente header en la etiqueta header y cargo su funcionalidad
@@ -8,3 +9,4 @@ header.script()
 
 document.querySelector('main').innerHTML = panel.template
 panel.script()
+
