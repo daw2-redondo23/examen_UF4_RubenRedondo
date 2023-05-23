@@ -6807,6 +6807,7 @@ const login = {
         if (usuarioLoggeado) {
           document.querySelector("#emailUsuario").innerHTML = usuarioLoggeado.email;
           document.querySelector("#login").innerHTML = "LOGOUT";
+          document.querySelector("#login").value = "logout";
         }
         alert("Bienvenido!!!");
         document.querySelector("main").innerHTML = panel.template;
@@ -6856,7 +6857,7 @@ const header = {
       <a class="navbar-brand">Gestión de incidencias FPLLEFIA</a>
       <div>
         <button id="panel" class="btn btn-secondary ms-2">PANEL</button>
-        <button id="login" class="btn btn-secondary ms-2">LOGIN</button>
+        <button id="login" class="btn btn-secondary ms-2" value="">LOGIN</button>
         <button id="registro" class="btn btn-secondary ms-2">REGISTRO</button>
       </div>
       <div>
@@ -6865,7 +6866,7 @@ const header = {
       </div>
     </div>
   </nav>`,
-  script: () => {
+  script: async () => {
     document.querySelector("#panel").addEventListener("click", (e) => {
       e.preventDefault();
       document.querySelector("main").innerHTML = panel.template;
@@ -6880,6 +6881,15 @@ const header = {
       e.preventDefault();
       document.querySelector("main").innerHTML = registre.template;
       registre.script();
+    });
+    let btnLogin = document.querySelector("#login");
+    btnLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (btnLogin.value == "logout") {
+        User.logout();
+        btnLogin.innerHTML = "LOGIN";
+        document.querySelector("#emailUsuario").innerHTML = ``;
+      }
     });
   }
 };
