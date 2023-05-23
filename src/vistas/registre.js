@@ -9,7 +9,7 @@ export default{
                 <input  id="inputUsuario" type="text" class="form-control" placeholder="usuario@mail.com">
 
                 <label for="pass" class="mt-2 form-label">Contraseña: </label>
-                <input id="inputPassword" type="text" class="form-control">
+                <input id="inputPassword" type="password" class="form-control">
 
                 <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
                 </form>
