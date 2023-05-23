@@ -12,8 +12,7 @@ export default{
 
     </table>`,
     script: async()=>{
-        const usuario = await User.getUser()
-        if
+       
         let tablaPendientes = `<thead>
                                     <tr>
                                     <th>Código</th>

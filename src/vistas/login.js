@@ -15,7 +15,6 @@ export default{
     </form>
   </div>`,
     script: async()=>{
-   
       document.querySelector('#enviar').addEventListener("click", async(e)=>{ //detecto el click en el boton enviar 
         e.preventDefault()
 
@@ -30,6 +29,7 @@ export default{
 
           if(usuarioLoggeado){ //si el usuario se ha podido loggear se pintara el email en un span arriba a la derecha del header
             document.querySelector('#emailUsuario').innerHTML = usuarioLoggeado.email
+            document.querySelector('#login').innerHTML = 'LOGOUT'
           }
           alert("Bienvenido!!!") //una alerta para indicar que te has loggeado
           document.querySelector('main').innerHTML = panel.template //vuelvo a pintar el panel para poder realizar alguna accion
