@@ -6684,7 +6684,6 @@ const panel = {
 
     </table>`,
   script: async () => {
-    await User.getUser();
     let tablaPendientes = `<thead>
                                     <tr>
                                     <th>Código</th>
@@ -6790,7 +6789,7 @@ const login = {
       <input id="inputEmail" type="text" class="form-control" placeholder="usuario@mail.com">
 
       <label for="pass" class="mt-2 form-label">Contraseña: </label>
-      <input id="inputPassword" type="text" class="form-control">
+      <input id="inputPassword" type="password" class="form-control">
 
       <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
     </form>
@@ -6807,6 +6806,7 @@ const login = {
         const usuarioLoggeado = await User.login(usuarioLogin);
         if (usuarioLoggeado) {
           document.querySelector("#emailUsuario").innerHTML = usuarioLoggeado.email;
+          document.querySelector("#login").innerHTML = "LOGOUT";
         }
         alert("Bienvenido!!!");
         document.querySelector("main").innerHTML = panel.template;
@@ -6825,7 +6825,7 @@ const registre = {
                 <input  id="inputUsuario" type="text" class="form-control" placeholder="usuario@mail.com">
 
                 <label for="pass" class="mt-2 form-label">Contraseña: </label>
-                <input id="inputPassword" type="text" class="form-control">
+                <input id="inputPassword" type="password" class="form-control">
 
                 <input type="text" class="mt-4 w-100 btn btn-primary" value="Entrar" id="enviar">
                 </form>
